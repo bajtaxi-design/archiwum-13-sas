@@ -27,6 +27,23 @@ Adresy 1 i 2 podał właściciel projektu. Treść portalu 1 została odczytana 
 
 Nie tworzymy kolejnych równorzędnych „stron głównych”. Na każdej witrynie docelowo powinien być widoczny link do portalu głównego oraz pozostałych serwisów — ale edycje witryn `chatgpt.site` wymagają odrębnego dostępu do ich edytora. Ten PR zmienia **wyłącznie publiczne repozytorium GitHub**.
 
+## Szlak Ułański SAS13 — ścieżka zwiedzania
+
+Nazwa jest metaforą rodzinnej pamięci i sposobem **nawigowania między istniejącymi materiałami**, a nie nazwą udowodnionego szlaku wojskowego.
+
+| Etap | Widoczna nazwa | Dokąd prowadzi |
+| --- | --- | --- |
+| 1 | Kresy | `#os` — istniejąca oś rodu |
+| 2 | Michał | Portal główny; odwiedzający wybiera w nim dział „Michał” |
+| 3 | Jan | Osobna witryna biograficzna Jana Stanisława |
+| 4 | Chodzież i porcelana | `#porcelana` — historia przedsiębiorstwa |
+| 5 | Dowody [P] | `#index` — publiczny Master Index i locatory |
+| 6 | Sprzeczności [S] | `#sprzecznosci` — rejestr otwartych rozbieżności |
+
+**Nawigacja:** przystanki lokalne używają `location.hash`; obsługa `hashchange` umożliwia przejścia oraz cofanie w przeglądarce. Linki zewnętrzne otwierają się w nowej karcie i nie wykonują żadnej synchronizacji danych. Dla strony Michała nie zakładamy niezweryfikowanego głębokiego linku — prowadzi do portalu.
+
+**Kontrola wydania:** testy składni i działających przejść w przeglądarce/iPhonie są wymagane przed scaleniem PR; zapis plików do gałęzi sam nie stanowi takiego testu.
+
 ## Metoda źródłowa i granice prywatności
 
 - Oznaczenia: `[P]` dokument, `[R]` relacja, `[I]` interpretacja, `[H]` hipoteza, `[S]` sprzeczność, `[Z]` zadanie.
