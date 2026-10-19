@@ -48,6 +48,22 @@ const views = {
   sprzecznosci: () => '<div class="kicker">[S] DETEKTOR</div><h2 class="display">Konflikt danych<br>pozostaje widoczny.</h2><p class="muted">System nie wybiera wygodniejszej wersji. Każda rozbieżność ma węzeł, źródło i locator.</p><div class="timeline" style="margin-top:16px">'+sprz.map((s,i)=>'<article class="item"><div class="meta"><span class="tag s">[S] 0'+(i+1)+'</span> '+s.id+' · AKTYWNY</div><h3>'+s.h+'</h3><p>'+s.p+'</p><p style="margin-top:6px">Źródło: '+s.z+' · Locator: '+s.l+'</p></article>').join('')+'</div>',
   os: () => '<div class="kicker">OŚ RODU · SAS</div><h2 class="display">Filiacja twarda.<br>Tytuł — osobno.</h2><div class="axis card" style="margin-top:16px"><p><b>Michał Baczyński</b> · Demycze · ur. 05.05 / 13.05.1896 [S] · przodownik Policji Państwowej · Siewwostłag.</p><p><b>Jan Stanisław Baczyński</b> · Jazłowiec 11.03.1926 — zgon 12.05.1982 [S miejsce/godzina] · dyrektor ChZPiP · kapitan rezerwy.</p><p><b>Helena Genowefa</b> née Morozowicz · Buczacz 13.01.1927.</p><p><b>Krzysztof Kamil Baczyński</b> · 1953.</p><p><b>Jan Michał Baczyński</b> · 04.11.1983 · Kustosz.</p><p style="margin-top:12px" class="muted">Szlachectwo h. Sas: weryfikacja w toku. Nie wpisujemy tytułu jako faktu, dopóki filiacja do wylegitymowanego Andrzeja/Andżela nie stoi na [P].</p></div>',
   czytelnia: () => '<div class="kicker">CZYTELNIA</div><h2 class="display">Materiały zostają<br>u Kustosza.</h2><p class="muted">Repo publiczne = darmowy hosting. Pełne skany i 14 tomów AP Piła nie idą na GitHub, dopóki nie zdecydujesz inaczej. Tu indeks, nie zrzut.</p><div class="timeline" style="margin-top:16px"><article class="item"><div class="meta">REJESTR OPERACYJNY · 10 STRON</div><h3>Rejestr Główny Archiwum 13 SAS v0.1</h3><p>Indeks węzłów i locatorów. Plik lokalny u Kustosza.</p></article><article class="item"><div class="meta">AP PIŁA · 14 TOMÓW · 652 STRONY</div><h3>Zrzut akt zakładowych 1945–1983</h3><p>AP-PILA-01 … AP-PILA-14. Publiczna warstwa podaje locator, nie PDF.</p></article><article class="item"><div class="meta">INWENTARYZACJA</div><h3>Szafka 1 — atlasy po dziadku</h3><p>40 stron. Poza publicznym gitem.</p></article></div>',
+  j3: () => `
+    <div class="kicker">SZLAK UŁAŃSKI SAS13 · ODSŁONA J3</div>
+    <h2 class="display">Prawdziwe Oblicze<br>J3</h2>
+    <p class="muted">Nie narzucamy gotowego osądu. Sprawdzamy, co naprawdę wynika z materiału źródłowego, co pochodzi z relacji oraz które pytania pozostają otwarte. „J3” jest nazwą tej odsłony; bez potwierdzonej definicji nie przypisujemy mu osoby, jednostki ani sygnatury.</p>
+    <div class="timeline" style="margin-top:16px">
+      <article class="item"><div class="meta">01 · [P] DOKUMENT</div><h3>Co da się wykazać?</h3><p>Weryfikujemy pierwotny zapis i jego locator. Sam opis, późniejsze streszczenie ani OCR nie zastępują dokumentu.</p></article>
+      <article class="item"><div class="meta">02 · [R] RELACJA</div><h3>Co mówią świadkowie?</h3><p>Relacje zachowujemy wraz z informacją o ich autorze i czasie powstania. Nie zamieniamy ich automatycznie w potwierdzone fakty.</p></article>
+      <article class="item"><div class="meta">03 · [I] / [H] WYJAŚNIENIA</div><h3>Co można wywnioskować, a co jest hipotezą?</h3><p>Interpretację oddzielamy od hipotezy. Każda propozycja wyjaśnienia wymaga sprawdzenia w źródłach.</p></article>
+      <article class="item"><div class="meta">04 · [S] SPRZECZNOŚCI</div><h3>Co nadal się nie zgadza?</h3><p>Rozbieżności pozostają jawne w rejestrze, bez pozornego rozstrzygania na podstawie brakujących akt.</p></article>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <div class="kicker">DALSZA NAWIGACJA</div>
+      <p class="muted">Prawdziwe Oblicze J3 jest punktem analizy, nie zamkniętym werdyktem. Każdą tezę należy powiązać z konkretnym źródłem.</p>
+      <p style="margin-top:12px"><a href="#index">Przejdź do dowodów [P] →</a> · <a href="#sprzecznosci">Sprawdź sprzeczności [S] →</a> · <a href="#os">Wróć do osi rodu →</a></p>
+    </div>
+  `,
   lumen: () => '<div class="kicker">LUMEN J28</div><h2 class="display">Pytaj system,<br>nie internet.</h2><p class="muted">LUMEN na chatgpt.site był warstwą Czatów. Tu zasada: najpierw [P] i [R] z Archiwum. Grok / BaCZAS jest partnerem operacyjnym Kustosza — nie zastępuje aktu.</p><div class="card" style="margin-top:16px"><p>Hasło robocze</p><p class="muted" style="margin-top:8px">„Co stoi na [P] w akcie 188/1982, a co wchodzi dopiero z parafii i relacji?”</p><p class="muted" style="margin-top:12px">Odpowiedź systemowa: USC = Piła, brak godziny. Parafia = Chodzież 10:50, wylew, bez sakramentu. Relacja rodzinna o okolicznościach śmierci pozostaje [R], nie [P].</p></div>'
 };
 const porc = [
@@ -75,7 +91,7 @@ const sprz = [
   {id:"J28-0018",h:"WBH — konflikt sygnatur",p:"Ten sam wątek rozkazu personalnego: III-311-17 i III-427-23. Rozstrzygnięcie wymaga fotografii naklejki albo strony z sygnaturą.",z:"WBH / CAW",l:"RK-002"},
   {id:"J28-0023",h:"AP Piła — data 12.05.1926",p:"Przy kopertach 822/3039 zapis \u201eur. 12.05.1926, syn Michała\u201d koliduje z rdzeniem 11.03.1926.",z:"AP Piła",l:"822/3039; odp. 24.08.2026"}
 ];
-const titles = {pulpit:"Pulpit",porcelana:"Porcelana",index:"Master Index",sprzecznosci:"Sprzeczności",os:"Oś rodu",czytelnia:"Czytelnia",lumen:"LUMEN J28"};
+const titles = {pulpit:"Pulpit",porcelana:"Porcelana",index:"Master Index",sprzecznosci:"Sprzeczności",os:"Oś rodu",czytelnia:"Czytelnia",lumen:"LUMEN J28",j3:"Prawdziwe Oblicze J3"};
 const viewEl = document.getElementById("view");
 const titleEl = document.getElementById("title");
 const nav = document.getElementById("nav");
