@@ -39,9 +39,16 @@ Nazwa jest metaforą rodzinnej pamięci i sposobem **nawigowania między istniej
 | 4 | Chodzież i porcelana | `#porcelana` — historia przedsiębiorstwa |
 | 5 | Dowody [P] | `#index` — publiczny Master Index i locatory |
 | 6 | Sprzeczności [S] | `#sprzecznosci` — rejestr otwartych rozbieżności |
-| 7 | Prawdziwe Oblicze J3 | `#j3` — analiza warstw `[P]`, `[R]`, `[I]`, `[H]` i `[S]` bez przedwczesnego werdyktu |
+| 7 | Prawdziwe Oblicze J3 | `#j3` — cztery znaczenia monogramu rodowego: trzech Janów, JB, 13 oraz J → MB |
 
-**Uwaga:** „J3” pozostaje nazwą wskazaną przez właściciela, a nie potwierdzoną osobą, sygnaturą lub jednostką. Bez ustalenia rozwinięcia nie publikujemy dalszych tez pod tym szyldem.
+**Geneza J3 — objaśnienie autora symbolu:**
+
+- **J3 / J³** — trzech Janów i ciągłość trzech pokoleń.
+- **JB** — wspólny znak inicjałów autora, jego dziadka i pradziadka, zgodnie z jego relacją.
+- **13** — liczba łącząca monogram ze znakiem Archiwum 13 SAS.
+- **J → MB** — zamierzony efekt graficzny po obróceniu/przekształceniu litery J; wymaga dopiero opracowania w logotypie, nie jest automatyczną cechą każdego kroju pisma.
+
+To **autorska wykładnia znaku**, nie samodzielny dowód filiacji, potwierdzenie historycznej nazwy jednostki ani sygnatura archiwalna. Imiona, daty i pokrewieństwo wymagają odrębnych źródeł [P].
 
 **Nawigacja:** przystanki lokalne używają `location.hash`; obsługa `hashchange` umożliwia przejścia oraz cofanie w przeglądarce. Linki zewnętrzne otwierają się w nowej karcie i nie wykonują żadnej synchronizacji danych. Dla strony Michała nie zakładamy niezweryfikowanego głębokiego linku — prowadzi do portalu.
 
