@@ -1,5 +1,18 @@
 # Archiwum 13 SAS — J28
 
+## Mapa publicznych serwisów
+
+| Rola | Adres |
+| --- | --- |
+| Portal główny — źródła, kwerendy, publikacje | https://strona-baczas.bajtax.chatgpt.site/ |
+| Biografia Jana Stanisława Baczyńskiego | https://jan-stanislaw-baczynski.jbaczynski1.chatgpt.site/ |
+| Łańcuch dowodowy — odrębne wdrożenie techniczne | https://archiwum-13-sas-lancuch-dowodowy.vercel.app/ |
+
+Szczegółowy podział odpowiedzialności i warunki publikacji: [SERWISY_ARCHIWUM_13_SAS.md](SERWISY_ARCHIWUM_13_SAS.md).
+
+**Nie łączymy ani nie synchronizujemy automatycznie treści z tych serwisów.**
+Zmiany w repozytorium mogą wpłynąć na stronę produkcyjną Vercel po włączeniu automatycznych wdrożeń — najpierw test Preview i przegląd zmian.
+
 Strona własna Archiwum. **0 zł.** Hosting: GitHub Pages.
 
 Adres po włączeniu Pages:
