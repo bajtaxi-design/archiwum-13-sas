@@ -39,6 +39,9 @@ Nazwa jest metaforą rodzinnej pamięci i sposobem **nawigowania między istniej
 | 4 | Chodzież i porcelana | `#porcelana` — historia przedsiębiorstwa |
 | 5 | Dowody [P] | `#index` — publiczny Master Index i locatory |
 | 6 | Sprzeczności [S] | `#sprzecznosci` — rejestr otwartych rozbieżności |
+| 7 | Prawdziwe Oblicze J3 | `#j3` — analiza warstw `[P]`, `[R]`, `[I]`, `[H]` i `[S]` bez przedwczesnego werdyktu |
+
+**Uwaga:** „J3” pozostaje nazwą wskazaną przez właściciela, a nie potwierdzoną osobą, sygnaturą lub jednostką. Bez ustalenia rozwinięcia nie publikujemy dalszych tez pod tym szyldem.
 
 **Nawigacja:** przystanki lokalne używają `location.hash`; obsługa `hashchange` umożliwia przejścia oraz cofanie w przeglądarce. Linki zewnętrzne otwierają się w nowej karcie i nie wykonują żadnej synchronizacji danych. Dla strony Michała nie zakładamy niezweryfikowanego głębokiego linku — prowadzi do portalu.
 
