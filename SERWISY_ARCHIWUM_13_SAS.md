@@ -1,0 +1,45 @@
+# ARCHIWUM 13 SAS — mapa serwisów publicznych
+
+Stan porządkowania: 20.10.2026. Dokument określa **role i odsyłacze**, nie potwierdza synchronizacji zawartości ani dostępności stron w każdej przeglądarce.
+
+## Publiczne wejścia
+
+| Priorytet | Nazwa w menu | Adres | Zadanie |
+| --- | --- | --- | --- |
+| 1 | Archiwum 13 SAS — portal główny | https://strona-baczas.bajtax.chatgpt.site/ | Źródła, kwerendy, genealogia, fotografie, artykuły, przegląd sprzeczności |
+| 2 | Jan Stanisław Baczyński — biografia | https://jan-stanislaw-baczynski.jbaczynski1.chatgpt.site/ | Osobny życiorys i dokumentacja osoby |
+| 3 | Łańcuch dowodowy — indeks techniczny | https://archiwum-13-sas-lancuch-dowodowy.vercel.app/ | Uporządkowane ustalenia, locatory i rozbieżności; odrębne wdrożenie Vercel |
+
+Adresy 1 i 2 podał właściciel projektu. Treść portalu 1 została odczytana publicznie; zawartości strony 2 nie udało się niezależnie sprawdzić. Wdrożenie 3 ma status Vercel READY, co samo w sobie nie potwierdza poprawnego wyświetlania strony.
+
+## Jedna nazwa, różne odpowiedzialności
+
+- **ARCHIWUM 13 SAS** to wspólny szyld. Używamy go w tytułach nawigacji i opisach powiązanych witryn.
+- **Portal główny** jest punktem orientacyjnym dla odwiedzających. Nie zakładamy, że kod portalu znajduje się w tym repozytorium.
+- **Biografia Jana** ma własny adres. Nie kopiujemy automatycznie materiału z biografii do pozostałych witryn.
+- **Łańcuch dowodowy** jest osobnym publicznym wdrożeniem, nie prywatnym repozytorium skanów.
+- **To repozytorium** (`bajtaxi-design/archiwum-13-sas`) to publiczny kod oraz indeks, nie magazyn oryginałów. Jego katalog `jan-stanislaw-baczynski/` pozostaje odrębny od strony biograficznej na `chatgpt.site`.
+- **Prywatna aplikacja** pozostaje poza publicznym menu, bez ekspozycji prywatnego adresu API, danych logowania lub plików.
+
+## Stały schemat publicznej nawigacji
+
+**Portal główny** → **Biografia Jana** → **Łańcuch dowodowy**
+
+Nie tworzymy kolejnych równorzędnych „stron głównych”. Na każdej witrynie docelowo powinien być widoczny link do portalu głównego oraz pozostałych serwisów — ale edycje witryn `chatgpt.site` wymagają odrębnego dostępu do ich edytora. Ten PR zmienia **wyłącznie publiczne repozytorium GitHub**.
+
+## Metoda źródłowa i granice prywatności
+
+- Oznaczenia: `[P]` dokument, `[R]` relacja, `[I]` interpretacja, `[H]` hipoteza, `[S]` sprzeczność, `[Z]` zadanie.
+- Obraz dokumentu i transkrypcja to odrębne warstwy. Nie oznaczamy samego OCR jako dowodu `[P]`.
+- Brak dokumentu albo błąd dostępności strony **nie dowodzi** niczego o sprawie historycznej.
+- Bez osobnej autoryzacji nie publikujemy pełnych skanów, danych osobowych żyjących osób ani prywatnej korespondencji.
+- Link nie oznacza automatycznego przeniesienia, połączenia baz danych ani integracji z ChatGPT.
+
+## Publikacja i powrót
+
+1. Weryfikować zawartość PR na gałęzi roboczej.
+2. Sprawdzić wyświetlanie na iPhonie i laptopie oraz to, czy wszystkie trzy odsyłacze otwierają właściwe witryny.
+3. Zweryfikować konfigurację Vercel przed scaleniem: połączenie repozytorium z projektem może powodować nowy build i zastąpić wcześniej wdrożoną wersję HTML.
+4. Dopiero po potwierdzeniu zmian dopuścić merge/release. Powrót: odwrócić commit nawigacji lub przywrócić ostatnie sprawdzone wdrożenie. Nie zmieniać baz danych.
+
+Koszt nowych płatnych usług: **0 zł**. Ta mapa nie wymaga Supabase, płatnych API ani nowych kont.
