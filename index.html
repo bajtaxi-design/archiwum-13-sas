@@ -69,6 +69,18 @@
     .site-directory .site-label{color:var(--gold);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
     .site-directory strong{font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1.05;color:var(--gold2)}
     .site-directory .site-detail{color:var(--muted);font-size:12px;line-height:1.4}
+
+    .ulanski-trail{border:1px solid var(--line);background:var(--panel);padding:16px;margin-bottom:20px}
+    .ulanski-trail h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(25px,3vw,34px);color:var(--gold2);margin:4px 0 8px}
+    .ulanski-trail p{font-size:12px;line-height:1.5;color:var(--muted);margin-bottom:12px}
+    .ulanski-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+    .ulanski-step{display:flex;flex-direction:column;justify-content:space-between;gap:7px;min-width:0;padding:11px 9px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none}
+    .ulanski-step:hover,.ulanski-step:focus-visible,.ulanski-step[aria-current="step"]{border-color:var(--gold);background:#191711;outline-offset:2px}
+    .ulanski-step .stage{font-size:10px;letter-spacing:.1em;color:var(--gold)}
+    .ulanski-step strong{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:21px;line-height:1.04}
+    .ulanski-step span:last-child{font-size:11px;color:var(--muted);line-height:1.35}
+    @media(max-width:920px){.ulanski-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:640px){.ulanski-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:920px){.site-directory{grid-template-columns:1fr}.site-directory a{min-height:0}}
     @media(max-width:920px){.app{grid-template-columns:1fr}.side{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav{display:none}nav.open{display:flex}.menu-btn{display:inline-block}.grid-hero,.stats,.nums,.kv{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.main{padding:14px 12px 32px}.grid-hero,.stats,.nums,.kv{grid-template-columns:1fr}.scan{min-height:280px}.top h1{font-size:26px}}
@@ -110,6 +122,31 @@
       <strong>Łańcuch dowodowy</strong>
       <span class="site-detail">Odsyłacze do ustaleń oraz rozbieżności źródłowych.</span>
     </a>
+  </section>
+  <section class="ulanski-trail" id="szlak-ulanski" aria-labelledby="szlak-ulanski-title">
+    <div class="kicker">Szlak opowieści · 6 przystanków</div>
+    <h2 id="szlak-ulanski-title">Szlak Ułański SAS13</h2>
+    <p>Od Kresów przez losy Michała i Jana do Chodzieży, źródeł i rozbieżności. To nawigacja tematyczna po archiwum, nie poświadczona historyczna trasa wojskowa.</p>
+    <nav class="ulanski-steps" aria-label="Przystanki Szlaku Ułańskiego SAS13">
+      <a class="ulanski-step" href="#os" data-route-view="os">
+        <span class="stage">01 · Początek</span><strong>Kresy</strong><span>Oś rodu Baczyńskich</span>
+      </a>
+      <a class="ulanski-step" href="https://strona-baczas.bajtax.chatgpt.site/" target="_blank" rel="noopener noreferrer">
+        <span class="stage">02 · Losy rodziny ↗</span><strong>Michał</strong><span>Portal główny → dział Michał</span>
+      </a>
+      <a class="ulanski-step" href="https://jan-stanislaw-baczynski.jbaczynski1.chatgpt.site/" target="_blank" rel="noopener noreferrer">
+        <span class="stage">03 · Życiorys ↗</span><strong>Jan</strong><span>Osobna biografia</span>
+      </a>
+      <a class="ulanski-step" href="#porcelana" data-route-view="porcelana">
+        <span class="stage">04 · Chodzież</span><strong>Porcelana</strong><span>Historia zakładów</span>
+      </a>
+      <a class="ulanski-step" href="#index" data-route-view="index">
+        <span class="stage">05 · Sprawdź</span><strong>Dowody [P]</strong><span>Master Index i locatory</span>
+      </a>
+      <a class="ulanski-step" href="#sprzecznosci" data-route-view="sprzecznosci">
+        <span class="stage">06 · Otwarte pytania</span><strong>Sprzeczności [S]</strong><span>Co nadal wymaga badań?</span>
+      </a>
+    </nav>
   </section>
   <div id="view"></div>
   <footer>RODOWE ARCHIWUM · KRESY · PRAWDA · J28 / BLACK INK 13</footer>
