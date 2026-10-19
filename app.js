@@ -48,6 +48,22 @@ const views = {
   sprzecznosci: () => '<div class="kicker">[S] DETEKTOR</div><h2 class="display">Konflikt danych<br>pozostaje widoczny.</h2><p class="muted">System nie wybiera wygodniejszej wersji. Każda rozbieżność ma węzeł, źródło i locator.</p><div class="timeline" style="margin-top:16px">'+sprz.map((s,i)=>'<article class="item"><div class="meta"><span class="tag s">[S] 0'+(i+1)+'</span> '+s.id+' · AKTYWNY</div><h3>'+s.h+'</h3><p>'+s.p+'</p><p style="margin-top:6px">Źródło: '+s.z+' · Locator: '+s.l+'</p></article>').join('')+'</div>',
   os: () => '<div class="kicker">OŚ RODU · SAS</div><h2 class="display">Filiacja twarda.<br>Tytuł — osobno.</h2><div class="axis card" style="margin-top:16px"><p><b>Michał Baczyński</b> · Demycze · ur. 05.05 / 13.05.1896 [S] · przodownik Policji Państwowej · Siewwostłag.</p><p><b>Jan Stanisław Baczyński</b> · Jazłowiec 11.03.1926 — zgon 12.05.1982 [S miejsce/godzina] · dyrektor ChZPiP · kapitan rezerwy.</p><p><b>Helena Genowefa</b> née Morozowicz · Buczacz 13.01.1927.</p><p><b>Krzysztof Kamil Baczyński</b> · 1953.</p><p><b>Jan Michał Baczyński</b> · 04.11.1983 · Kustosz.</p><p style="margin-top:12px" class="muted">Szlachectwo h. Sas: weryfikacja w toku. Nie wpisujemy tytułu jako faktu, dopóki filiacja do wylegitymowanego Andrzeja/Andżela nie stoi na [P].</p></div>',
   czytelnia: () => '<div class="kicker">CZYTELNIA</div><h2 class="display">Materiały zostają<br>u Kustosza.</h2><p class="muted">Repo publiczne = darmowy hosting. Pełne skany i 14 tomów AP Piła nie idą na GitHub, dopóki nie zdecydujesz inaczej. Tu indeks, nie zrzut.</p><div class="timeline" style="margin-top:16px"><article class="item"><div class="meta">REJESTR OPERACYJNY · 10 STRON</div><h3>Rejestr Główny Archiwum 13 SAS v0.1</h3><p>Indeks węzłów i locatorów. Plik lokalny u Kustosza.</p></article><article class="item"><div class="meta">AP PIŁA · 14 TOMÓW · 652 STRONY</div><h3>Zrzut akt zakładowych 1945–1983</h3><p>AP-PILA-01 … AP-PILA-14. Publiczna warstwa podaje locator, nie PDF.</p></article><article class="item"><div class="meta">INWENTARYZACJA</div><h3>Szafka 1 — atlasy po dziadku</h3><p>40 stron. Poza publicznym gitem.</p></article></div>',
+  j3: () => `
+    <div class="kicker">SZLAK UŁAŃSKI SAS13 · KOD RODOWY</div>
+    <h2 class="display">Prawdziwe Oblicze<br>J³</h2>
+    <p class="muted">J3 to osobisty znak trzech Janów, łączący inicjały JB, liczbę 13 oraz autorską ideę przekształcenia litery J w monogram MB. To znaczenie symboliczne podane przez twórcę Archiwum 13 SAS — nie osobna sygnatura ani historyczna jednostka wojskowa.</p>
+    <section class="j3-symbols" aria-label="Cztery znaczenia znaku J3">
+      <article class="item"><div class="meta">J³ · TRZECH JANÓW</div><h3>Trzy pokolenia</h3><p>Trzech Janów, których imię łączy pokolenia rodziny. J do trzeciej potęgi jest skrótem tej ciągłości.</p></article>
+      <article class="item"><div class="meta">JB · INICJAŁY RODOWE</div><h3>Ja, dziad, pradziad</h3><p>Wspólny znak JB odczytywany przez twórcę jako inicjały jego, dziadka i pradziadka. Daty oraz filiację dokumentujemy osobno.</p></article>
+      <article class="item"><div class="meta">13 · KOD ARCHIWUM</div><h3>SAS13</h3><p>Liczba 13 spina symbol z nazwą Archiwum 13 SAS i Szlakiem Ułańskim SAS13.</p></article>
+      <article class="item"><div class="meta">J → MB · MONOGRAM</div><h3>Drugie oblicze litery</h3><p>Po obróceniu i graficznym przekształceniu J autor zamierza ujawnić MB. To koncepcja znaku, a nie dosłowna równość typograficzna.</p></article>
+    </section>
+    <div class="card" style="margin-top:16px">
+      <div class="kicker">POKAZUJEMY ZNACZENIE · WERYFIKUJEMY HISTORIĘ</div>
+      <p class="muted">Symbol J3 objaśnia zamysł rodzinnego archiwum. Historyczne twierdzenia wymagają dokumentów [P]; relacje [R], interpretacje [I], hipotezy [H] i sprzeczności [S] pozostają odrębne.</p>
+      <p style="margin-top:12px"><a href="#os">Oś rodu →</a> · <a href="#index">Dowody [P] →</a> · <a href="#sprzecznosci">Sprzeczności [S] →</a></p>
+    </div>
+  `,
   lumen: () => '<div class="kicker">LUMEN J28</div><h2 class="display">Pytaj system,<br>nie internet.</h2><p class="muted">LUMEN na chatgpt.site był warstwą Czatów. Tu zasada: najpierw [P] i [R] z Archiwum. Grok / BaCZAS jest partnerem operacyjnym Kustosza — nie zastępuje aktu.</p><div class="card" style="margin-top:16px"><p>Hasło robocze</p><p class="muted" style="margin-top:8px">„Co stoi na [P] w akcie 188/1982, a co wchodzi dopiero z parafii i relacji?”</p><p class="muted" style="margin-top:12px">Odpowiedź systemowa: USC = Piła, brak godziny. Parafia = Chodzież 10:50, wylew, bez sakramentu. Relacja rodzinna o okolicznościach śmierci pozostaje [R], nie [P].</p></div>'
 };
 const porc = [
@@ -75,19 +91,28 @@ const sprz = [
   {id:"J28-0018",h:"WBH — konflikt sygnatur",p:"Ten sam wątek rozkazu personalnego: III-311-17 i III-427-23. Rozstrzygnięcie wymaga fotografii naklejki albo strony z sygnaturą.",z:"WBH / CAW",l:"RK-002"},
   {id:"J28-0023",h:"AP Piła — data 12.05.1926",p:"Przy kopertach 822/3039 zapis \u201eur. 12.05.1926, syn Michała\u201d koliduje z rdzeniem 11.03.1926.",z:"AP Piła",l:"822/3039; odp. 24.08.2026"}
 ];
-const titles = {pulpit:"Pulpit",porcelana:"Porcelana",index:"Master Index",sprzecznosci:"Sprzeczności",os:"Oś rodu",czytelnia:"Czytelnia",lumen:"LUMEN J28"};
+const titles = {pulpit:"Pulpit",porcelana:"Porcelana",index:"Master Index",sprzecznosci:"Sprzeczności",os:"Oś rodu",czytelnia:"Czytelnia",lumen:"LUMEN J28",j3:"Prawdziwe Oblicze J3"};
 const viewEl = document.getElementById("view");
 const titleEl = document.getElementById("title");
 const nav = document.getElementById("nav");
+const trailLinks = document.querySelectorAll("#szlak-ulanski [data-route-view]");
+let currentView = null;
 function show(name) {
   const key = views[name] ? name : "pulpit";
+  if (currentView === key) return;
+  currentView = key;
   viewEl.innerHTML = views[key]();
   titleEl.textContent = titles[key];
   nav.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.view === key));
-  location.hash = key;
+  trailLinks.forEach(link => {
+    if (link.dataset.routeView === key) link.setAttribute("aria-current", "step");
+    else link.removeAttribute("aria-current");
+  });
+  if (location.hash !== "#" + key) location.hash = key;
   nav.classList.remove("open");
   window.scrollTo(0,0);
 }
 nav.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(b.dataset.view); });
 document.getElementById("menuBtn").onclick = () => nav.classList.toggle("open");
+window.addEventListener("hashchange", () => show((location.hash || "#pulpit").slice(1)));
 show((location.hash || "#pulpit").slice(1));
