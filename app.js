@@ -79,15 +79,24 @@ const titles = {pulpit:"Pulpit",porcelana:"Porcelana",index:"Master Index",sprze
 const viewEl = document.getElementById("view");
 const titleEl = document.getElementById("title");
 const nav = document.getElementById("nav");
+const trailLinks = document.querySelectorAll("#szlak-ulanski [data-route-view]");
+let currentView = null;
 function show(name) {
   const key = views[name] ? name : "pulpit";
+  if (currentView === key) return;
+  currentView = key;
   viewEl.innerHTML = views[key]();
   titleEl.textContent = titles[key];
   nav.querySelectorAll("button").forEach(b => b.classList.toggle("active", b.dataset.view === key));
-  location.hash = key;
+  trailLinks.forEach(link => {
+    if (link.dataset.routeView === key) link.setAttribute("aria-current", "step");
+    else link.removeAttribute("aria-current");
+  });
+  if (location.hash !== "#" + key) location.hash = key;
   nav.classList.remove("open");
   window.scrollTo(0,0);
 }
 nav.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(b.dataset.view); });
 document.getElementById("menuBtn").onclick = () => nav.classList.toggle("open");
+window.addEventListener("hashchange", () => show((location.hash || "#pulpit").slice(1)));
 show((location.hash || "#pulpit").slice(1));
