@@ -63,6 +63,13 @@
     .axis{font-size:14px;line-height:1.7}
     .axis b{color:var(--gold2)}
     footer{margin-top:28px;color:var(--muted);font-size:12px;letter-spacing:.12em}
+    .site-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 20px}
+    .site-directory a{display:flex;flex-direction:column;gap:6px;min-width:0;min-height:110px;padding:14px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);text-decoration:none;transition:border-color .15s ease,background .15s ease}
+    .site-directory a:hover,.site-directory a:focus-visible{border-color:var(--gold);background:var(--panel);outline-offset:3px}
+    .site-directory .site-label{color:var(--gold);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+    .site-directory strong{font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1.05;color:var(--gold2)}
+    .site-directory .site-detail{color:var(--muted);font-size:12px;line-height:1.4}
+    @media(max-width:920px){.site-directory{grid-template-columns:1fr}.site-directory a{min-height:0}}
     @media(max-width:920px){.app{grid-template-columns:1fr}.side{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}nav{display:none}nav.open{display:flex}.menu-btn{display:inline-block}.grid-hero,.stats,.nums,.kv{grid-template-columns:1fr 1fr}}
     @media(max-width:640px){.main{padding:14px 12px 32px}.grid-hero,.stats,.nums,.kv{grid-template-columns:1fr}.scan{min-height:280px}.top h1{font-size:26px}}
   </style>
@@ -80,13 +87,30 @@
     <button data-view="os"><small>05</small> Oś rodu</button>
     <button data-view="czytelnia"><small>06</small> Czytelnia</button>
     <button data-view="lumen"><small>07</small> LUMEN J28</button>
-    <a href="jan-stanislaw-baczynski/" class="bio-link"><small>08</small> Jan Stanisław Baczyński ↗</a>
+    <a href="jan-stanislaw-baczynski/" class="bio-link"><small>08</small> Biografia w repozytorium ↗</a>
     <a href="krwia-metalem-olejem-honorem/" class="bio-link"><small>09</small> Krwią, metalem, olejem, honorem ↗</a>
   </nav>
   <div class="lock"><b>REALITY LOCK</b>Źródło → model → działanie<br>0 zł · GitHub Pages · J28</div>
 </aside>
 <main class="main">
   <div class="top"><h1 id="title">Pulpit</h1><div class="online">● ONLINE · 12.09.2026</div></div>
+  <section class="site-directory" aria-label="Powiązane witryny Archiwum 13 SAS">
+    <a href="https://strona-baczas.bajtax.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="Otwórz portal główny Archiwum 13 SAS w nowej karcie">
+      <span class="site-label">01 · Portal główny ↗</span>
+      <strong>Archiwum 13 SAS</strong>
+      <span class="site-detail">Źródła, genealogia, fotografie, ChZPiP i publikacje.</span>
+    </a>
+    <a href="https://jan-stanislaw-baczynski.jbaczynski1.chatgpt.site/" target="_blank" rel="noopener noreferrer" aria-label="Otwórz stronę Jana Stanisława Baczyńskiego w nowej karcie">
+      <span class="site-label">02 · Biografia ↗</span>
+      <strong>Jan Stanisław Baczyński</strong>
+      <span class="site-detail">Osobna witryna biograficzna i dokumentacja historyczna.</span>
+    </a>
+    <a href="https://archiwum-13-sas-lancuch-dowodowy.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Otwórz Łańcuch Dowodowy Archiwum 13 SAS w nowej karcie">
+      <span class="site-label">03 · Indeks techniczny ↗</span>
+      <strong>Łańcuch dowodowy</strong>
+      <span class="site-detail">Odsyłacze do ustaleń oraz rozbieżności źródłowych.</span>
+    </a>
+  </section>
   <div id="view"></div>
   <footer>RODOWE ARCHIWUM · KRESY · PRAWDA · J28 / BLACK INK 13</footer>
 </main>
